@@ -1,59 +1,404 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>11 Novembre — Pour Khawla ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+:root{--pink:#ff8eae;--rose:#ff5f91;--cream:#fff5f7;--ink:#4a2638}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--ink);font-family:'DM Sans',sans-serif;background:radial-gradient(circle at 15% 15%,#ffe0eb 0,transparent 28%),radial-gradient(circle at 85% 30%,#f7dfff 0,transparent 30%),linear-gradient(135deg,#fff8f4,#ffeaf1 55%,#f5eaff);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.24;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:25px 25px}
+.wrap{width:min(920px,92%);margin:auto;padding:36px 0 60px;position:relative}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.pill{border:1px solid #ffc2d4;background:#ffffff9c;padding:9px 15px;border-radius:30px;font-size:12px;letter-spacing:1px}
+button{font:inherit;cursor:pointer;border:0}
+.hero{text-align:center;padding:68px 12px 38px}
+.eyebrow{color:#c34e7a;text-transform:uppercase;letter-spacing:4px;font-size:11px;font-weight:700}
+h1{font:700 clamp(42px,8vw,76px)/1.08 'Playfair Display',serif;margin:17px 0;color:#77334f}
+h1 span{color:#ed6d9a}
+.subtitle{max-width:570px;margin:0 auto;color:#875b6d;line-height:1.8;font-size:15px}
+.scene{perspective:1000px;display:flex;justify-content:center;margin:20px 0 36px}
+.gift{width:min(570px,100%);padding:34px 28px;border-radius:28px;text-align:center;background:linear-gradient(145deg,#ffffffd9,#fff0f5e8);border:1px solid #fff;box-shadow:0 25px 65px #ad54752b,inset 0 1px 0 #fff;transform:rotateX(3deg);transition:.4s}
+.gift:hover{transform:rotateX(0) rotateY(-2deg) translateY(-5px)}
+.heart{font-size:46px;filter:drop-shadow(0 8px 12px #f78bab66);animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-9px) rotate(5deg)}}
+.gift h2{font:600 29px 'Playfair Display',serif;margin:12px 0}
+.gift p{color:#93697a;line-height:1.75;margin:0 auto 22px;max-width:430px}
+.primary{background:linear-gradient(120deg,#f779a2,#c66bd0);color:white;padding:14px 23px;border-radius:30px;box-shadow:0 10px 24px #d36a9c55;font-weight:700;transition:.2s}
+.primary:hover{transform:translateY(-3px);box-shadow:0 14px 28px #d36a9c66}
+.secondary{background:#fff;color:#a44870;border:1px solid #ffd0df;padding:12px 19px;border-radius:25px}
+.letter{display:none;text-align:left;margin-top:24px;padding:22px;border-radius:18px;background:#fff9fb;border:1px dashed #f2a8c0;line-height:1.9;color:#70485a;animation:appear .5s ease}
+.letter.show{display:block}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:24px 0}
+.quiz{display:none;margin:28px auto 0;max-width:570px;text-align:left;background:#ffffffc9;border:1px solid white;border-radius:24px;padding:25px;box-shadow:0 15px 40px #a84f7020}
+.quiz.show{display:block;animation:appear .4s ease}
+.quiz h3{font:600 25px 'Playfair Display',serif;text-align:center;margin:0 0 20px}
+.question{padding:14px 0;border-bottom:1px solid #f5dce5}
+.question:last-of-type{border:0}
+.question p{font-weight:700;margin:0 0 10px}
+label{display:block;padding:7px 0;color:#80596a;cursor:pointer}
+input{accent-color:#e66f9a}
+.result{text-align:center;font-weight:700;color:#b34776;margin-top:15px;min-height:25px}
+footer{text-align:center;color:#a77a8c;font-size:12px;margin-top:48px}
+.spark{position:fixed;pointer-events:none;color:#f28db0;animation:fall linear infinite;opacity:.55;z-index:0}
+.floaty{position:fixed;bottom:-50px;pointer-events:none;z-index:0;animation:rise linear forwards;opacity:.8;filter:drop-shadow(0 4px 6px #e98aaa44)}
+@keyframes rise{0%{transform:translateY(0) rotate(0deg) scale(.7);opacity:0}12%{opacity:.9}85%{opacity:.8}100%{transform:translateY(-115vh) rotate(35deg) scale(1.25);opacity:0}}
+.wrap{z-index:1}
+@keyframes fall{from{transform:translateY(-10vh) rotate(0)}to{transform:translateY(110vh) rotate(300deg)}}
+@media(max-width:600px){.hero{padding-top:52px}.gift{padding:27px 19px}.top{align-items:flex-start}.pill{font-size:10px}.music{font-size:12px}}
 
-    <title>mon bb d'amour ❤️</title>
+.quiz-intro{text-align:center;color:#93697a;line-height:1.7}
+.progress{height:8px;background:#f8dce7;border-radius:20px;overflow:hidden;margin:18px 0 7px}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#f779a2,#c66bd0);border-radius:20px;transition:width .35s}
+.progress-label{text-align:center;color:#a66c84;font-size:12px;margin-bottom:16px}
+.quiz-question{font:600 22px 'Playfair Display',serif;text-align:center;margin:14px 0}
+.quiz-option{display:block;width:100%;text-align:left;padding:13px 15px;margin:9px 0;border:1px solid #f3c7d7;border-radius:14px;background:#fff;color:#80576a;transition:.2s}
+.quiz-option:hover{border-color:#e982a9;background:#fff5f8}
+.quiz-option:disabled{cursor:default;opacity:.78}
+.quiz-option.correct{background:#eaf8ef;border-color:#8bc99c;color:#326d45}
+.quiz-option.wrong{background:#fff0f0;border-color:#e69a9a;color:#a63f4b}
+.quiz-next{display:block;margin:16px auto 0}
+.final-surprise{display:none;margin-top:20px;padding:23px 18px;border-radius:20px;text-align:center;background:linear-gradient(145deg,#fff0f6,#f8edff);border:1px solid #f7c5d8;animation:appear .65s ease}
+.final-surprise.show{display:block}
+.final-surprise h3{font:600 27px 'Playfair Display',serif;color:#a34570;margin:8px 0}
+.final-surprise p{color:#80576a;line-height:1.8}
+.final-icon{font-size:43px;animation:float 2.5s ease-in-out infinite}
+.final-note{background:#ffffffa8;padding:13px;border-radius:14px}
+.signature{font:600 19px 'Playfair Display',serif;color:#b34f7a;margin-top:18px;line-height:1.7}
+.signature span{font:500 13px 'DM Sans',sans-serif;color:#93697a}
+.final-copy{direction:rtl;text-align:right;line-height:2.05}
+.final-copy p{margin:0 0 16px;color:#70485a}
+.final-copy strong{color:#a34570}
 
-    <link rel="stylesheet" href="style.css">
+/* Premium red + gold + pink 3D theme */
+:root{
+  --pink:#ff8fb8; --rose:#d92f62; --cream:#fff4f7; --ink:#4b1428;
+  --gold:#d6a83f; --gold-light:#ffe7a3; --deep-red:#7e102e;
+}
+body{
+  color:var(--ink);
+  background:
+    radial-gradient(ellipse at 12% 10%,#ffb5c9 0,transparent 30%),
+    radial-gradient(ellipse at 88% 18%,#ffe6a0 0,transparent 25%),
+    radial-gradient(ellipse at 50% 90%,#f8b5d0 0,transparent 34%),
+    linear-gradient(135deg,#4b071d 0%,#8e153b 34%,#e45c83 68%,#ffd6df 100%);
+  background-attachment:fixed;
+}
+body:before{
+  opacity:.2;
+  background-image:radial-gradient(#fff1c2 1px,transparent 1px);
+  background-size:23px 23px;
+}
+.wrap{perspective:1400px}
+.pill{
+  color:#fff0c4;background:linear-gradient(135deg,#7a102e,#bd2855);
+  border:1px solid #e7c46c;box-shadow:0 8px 22px #35001466, inset 0 1px #ffffff55;
+  text-shadow:0 1px 5px #360014;
+}
+.eyebrow{color:#ffe6a1;text-shadow:0 2px 12px #52051f}
+h1{
+  color:#fff5f7;text-shadow:0 5px 0 #7a1536,0 12px 24px #39001399;
+  transform:translateZ(35px);
+}
+h1 span{color:#ffe29a;text-shadow:0 4px 0 #a35c24,0 8px 18px #3c001b88}
+.subtitle{color:#fff0f4;text-shadow:0 2px 10px #500c29}
+.scene{perspective:1600px;transform-style:preserve-3d}
+.gift{
+  position:relative;isolation:isolate;
+  background:linear-gradient(145deg,#fffaf0 0%,#ffe1eb 46%,#ffd0dc 100%);
+  border:2px solid #e5bd63;
+  box-shadow:0 34px 0 -18px #7d1738,0 48px 70px #35001488,
+    inset 0 2px 0 #fff,inset 0 -8px 18px #d85b8050;
+  transform:rotateX(7deg) rotateY(-3deg) translateZ(25px);
+  transform-style:preserve-3d;
+}
+.gift:before{
+  content:"";position:absolute;inset:10px;border:1px solid #d8ae56;
+  border-radius:20px;pointer-events:none;transform:translateZ(12px);opacity:.7;
+}
+.gift:hover{transform:rotateX(0) rotateY(0) translateY(-8px) translateZ(35px)}
+.heart{color:#c51f50;text-shadow:0 5px 0 #8a1538,0 12px 18px #d52f6655;transform:translateZ(55px)}
+.gift h2{color:#851a3c;text-shadow:0 2px 0 #f3d18b;transform:translateZ(35px)}
+.gift p{color:#784052}
+.primary{
+  color:#fff9e9;background:linear-gradient(135deg,#8b1233 0%,#d72d61 55%,#f28aaa 100%);
+  border:1px solid #f0d184;box-shadow:0 7px 0 #74112e,0 15px 28px #9c174c66,inset 0 1px #ffffff88;
+  transform:translateZ(25px);transition:transform .2s,box-shadow .2s;
+}
+.primary:hover{transform:translateY(-4px) translateZ(35px);box-shadow:0 10px 0 #74112e,0 20px 32px #9c174c77}
+.secondary{
+  color:#7c1535;background:linear-gradient(145deg,#fff9e9,#ffdce7);
+  border:1px solid #d9b052;box-shadow:0 5px 0 #a46b35,0 12px 22px #47051d55;
+}
+.letter{
+  background:linear-gradient(145deg,#fffdf5,#ffe7ee);border:1px solid #d8ad55;
+  box-shadow:inset 0 2px 12px #c17b8b22,0 12px 22px #9b3a5b22;
+}
+.quiz{
+  position:relative;background:linear-gradient(145deg,#fffaf0 0%,#ffe4ed 60%,#ffd7e2 100%);
+  border:2px solid #e3bd69;border-radius:28px;
+  box-shadow:0 12px 0 -5px #791533,0 30px 60px #3b001a77,inset 0 2px 0 #fff;
+  transform:rotateX(2deg) translateZ(15px);transform-style:preserve-3d;
+}
+.quiz h3,.quiz-question{color:#8c173c;text-shadow:0 2px 0 #f1d38c}
+.quiz-intro{color:#814258}
+.progress{background:#f2c7d2;border:1px solid #e2b85f}
+.progress-fill{background:linear-gradient(90deg,#8d1237,#e03d70,#e8bd5b)}
+.quiz-option{
+  color:#70243f;background:linear-gradient(145deg,#fff,#fff0f4);
+  border:1px solid #e4bd6a;box-shadow:0 4px 0 #e7c3c9,0 7px 14px #7b173522;
+  transform:translateZ(8px);transition:transform .18s,box-shadow .18s;
+}
+.quiz-option:hover{
+  border-color:#c48b2f;background:linear-gradient(145deg,#fff8e7,#ffdbe7);
+  transform:translateY(-2px) translateZ(15px);
+  box-shadow:0 6px 0 #d7b0a9,0 12px 20px #7b173533;
+}
+.quiz-option.correct{background:linear-gradient(145deg,#fff2d1,#f8dce8);border-color:#c79b43;color:#6c1732}
+.quiz-option.wrong{background:#ffe5e8;border-color:#c84b61;color:#8c173c}
+.result{color:#9a2149}
+.final-surprise{
+  background:linear-gradient(145deg,#fff8e9,#ffe1eb 55%,#f9c9d9);
+  border:2px solid #d8ad55;box-shadow:inset 0 2px 0 #fff,0 18px 35px #8a204122;
+  transform:translateZ(18px);
+}
+.final-surprise h3{color:#8b1639;text-shadow:0 2px 0 #f0d18b}
+.final-surprise p,.final-copy p{color:#6e2942}
+.final-note{background:#fff9ed;border:1px solid #e2c477}
+.signature{color:#a51d4d;text-shadow:0 1px #f1d38c}
+footer{color:#fff0d3;text-shadow:0 2px 8px #4d001d}
+.spark{color:#ffe6a0;text-shadow:0 0 10px #e5a94d}
+.floaty{filter:drop-shadow(0 5px 8px #650d3266)}
+@media(max-width:600px){
+  .gift{transform:rotateX(3deg)}
+  .quiz{transform:none}
+}
+
+</style>
 </head>
-
 <body>
-
-    <div class="background"></div>
-
-    <div class="card">
-
-        <p class="top-text">For my friend girl khawla</p>
-
-        <!-- HEART -->
-        <div class="heart-area" id="heart">
-            <div class="heart"></div>
+<div class="wrap">
+  <div class="top">
+    <div class="pill">✦ 11 NOVEMBRE · POUR KHAWLA ✦</div>
+  </div>
+  <header class="hero">
+    <div class="eyebrow">Un petit moment rien que pour toi</div>
+    <h1>Une date, <span> mille sourires.</span></h1>
+    <p class="subtitle">Aujourd'hui, le 11 novembre, j'avais envie de préparer une petite surprise digitale, avec beaucoup de douceur et une touche de magie.</p>
+  </header>
+  <main>
+    <div class="scene">
+      <section class="gift">
+        <div class="heart">♡</div>
+        <h2>Pour Khawla ❤️</h2>
+        <p>Il y a des personnes qui rendent les journées plus lumineuses, simplement par leur présence. Cette petite page est un clin d'œil pour te rappeler que tu comptes.</p>
+        <button class="primary" id="openLetter" type="button">Ouvrir ton petit message ✨</button>
+        <div class="letter" id="letter">
+          <strong>Un petit mot pour toi…</strong><br><br>
+          Je voulais profiter de cette date pour te dire merci pour ta gentillesse, tes sourires et les beaux moments partagés. J'espère que cette journée t'apportera autant de joie que tu en offres autour de toi.<br><br>
+          Continue de briller à ta façon. Tu mérites plein de belles choses, aujourd'hui et tous les autres jours. ♡<br><br>
+          <span style="color:#c45b83">Avec beaucoup d'affection,</span><br>
+          <strong>Abdelillah</strong>
         </div>
-
-        <h1>mon bb d'amour</h1>
-
-        <div class="line"></div>
-
-        <p id="typing"></p>
-
-        <button id="loveButton">
-            Clique ici
-        </button>
-
-        <div id="message" class="message">
-
-            <h2>Pour toi ma vie</h2>
-
-            <p>
-                Nchallah nb9a m3ak dima w n7afdo 3la had l3la9a li binatna
-                nchalah nb9aw ndhko wnsn3o memoryat zwina m3a b3diyatna.ti li sakna fi 39li wfi glbi , nhbk wnmout 3lik bzff , malgre mina dak nhdr wsay w9adr hta ndork bhdrti bsh wlh ri ma 9sdi psq mnhbch hta tchnfyy brk ,wida ghlt m3ak smhili .i love you my heart choufi nghir 3lik bzff malgre manich nhdrlk wga3 bsh thrg fi glbi hh mnhbch nchoufk thdri m3a rjal nhbk lya whdiii afhmini brk chty ki nglk mdirich hadik wdi mtz3fich mni wla hta ida ghlt m3ak t3rfini bli nhbk wmn9dch nfrt fik ga3 💕
-            </p>
-
-            <p class="signature">
-                Avec tout mon amour
-            </p>
-
-        </div>
-
+      </section>
     </div>
+    <section class="quiz show" id="quiz">
+      <h3>Un petit défi pour toi 💌</h3>
+      <p class="quiz-intro" id="quizIntro">Réponds correctement à chaque question pour découvrir ton petit message secret. ♡</p>
+      <div class="progress"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-label" id="progressLabel">Question 1 sur 4</div>
+      <div id="questionArea"></div>
+      <div class="result" id="result" aria-live="polite"></div>
+      <div class="final-surprise" id="finalSurprise">
+        <div class="final-icon">💌</div>
+        <h3>❤️🥹 11/11 – Happy Girlfriend Day, My Love ❤️</h3>
+        <div class="final-copy">
+          <p>حبيبتي، اليوم 11 نوفمبر، نهار مميز بالنسبة ليا، خاطر هو فرصة أخرى باش نقولك شحال نتي غالية عندي، وشحال نحبك، وشحال وجودك في حياتي بدّل فيا بزاف حوايج. ❤️</p>
+          <p>نحبك بطريقة ما نقدرش نوصفها بالكلمات، نحبك أكثر من أي تعبير نقدر نقولو، وأكثر من أي رسالة نقدر نكتبهالك. نتي الإنسانة اللي كي نهدر معاها ننسى تعب النهار كامل، واللي مجرد ما نشوف اسمها في تليفوني تتبدل المود تاعي ونفرح. 🥹❤️</p>
+          <p>تعرفي واش نحب فيك؟ نحب شعرك، عينيك اللي نقدر نضيع فيهم، صوتك اللي ما نملّش من سماعو، ضحكتك اللي عندها مكانة خاصة في قلبي، وحتى طريقة كلامك، غيرتك، دلالك، وعفويتك... نحب كل تفصيلة فيك، حتى الحوايج الصغيرة اللي يمكن نتي ما تعطيهاش أهمية، بالنسبة ليا عندها قيمة كبيرة. 🫀</p>
+          <p>نحبك في نهاراتك الملاح، ونحبك حتى في الأيام اللي تكوني فيها معصبة، تعبانة ولا ما عندكش المود. ما نحبكش غير كي تكوني تضحكي، نحبك في كل حالاتك، ونحب نكون الشخص اللي تلقاي عندو الراحة والأمان والحنان.</p>
+          <p>نتمنى نكون ديما سبب في ضحكتك، ونكون أول شخص تحبي تحكيلو على فرحتك، وأول واحد تلقايه جنبك كي تحتاجي كلمة حلوة ولا شوية اهتمام. نتمنى نعيشو بزاف لحظات مع بعض، ونبقاو نختارو بعضانا كل يوم، مهما تبدلت الظروف. ❤️</p>
+          <p>وإذا سقساوني شحال نحبك، نقولهم الحب اللي في قلبي ليك ما يتقاسش لا بالكلام، لا بالوقت، لا حتى بالمسافات.</p>
+          <p>شكراً لأنك نتي، شكراً على وجودك، وعلى كل لحظة حلوة عشتها معاك.</p>
+          <p><strong>Happy Girlfriend Day, my beautiful girl. ❤️👑</strong></p>
+          <p><strong>I LOVE YOU SO MUCH, MORE THAN WORDS COULD EVER EXPLAIN. 💋❤️</strong></p>
+          <p><strong>11/11 واليوم وكل يوم... نتي حبيبتي وأجمل حاجة في حياتي. 🥹🫂❤️</strong></p>
+        </div>
+        <div class="signature">Joyeux 11 novembre ♡<br><span>Abdelillah</span></div>
+      </div>
+    </section>
 
-    <div id="floatingHearts"></div>
+    <div class="actions">
+      <button class="secondary" id="musicBtn" type="button">♫ تشغيل موسيقى هادئة</button>
+    </div>
+    
+  </main>
+  <footer>Fait avec douceur pour le 11.11 ♡</footer>
+</div>
+<script>
+const letter=document.getElementById('letter');
+document.getElementById('openLetter').addEventListener('click',()=>{
+  letter.classList.toggle('show');
+  document.getElementById('openLetter').textContent=letter.classList.contains('show')?'Refermer le message ♡':'Ouvrir ton petit message ✨';
+});
+// موسيقى هادئة أصلية مولّدة داخل الصفحة، لا تحتاج إلى ملف خارجي
+const musicBtn=document.getElementById('musicBtn');
+let audioContext=null;
+let musicTimer=null;
+let musicStep=0;
+const melody=[523.25,659.25,783.99,659.25,587.33,698.46,783.99,698.46,
+              493.88,587.33,659.25,587.33,440.00,523.25,659.25,523.25];
+function playSoftNote(freq,startAt,duration,volume){
+  const osc=audioContext.createOscillator();
+  const gain=audioContext.createGain();
+  osc.type='sine';
+  osc.frequency.setValueAtTime(freq,startAt);
+  gain.gain.setValueAtTime(0.0001,startAt);
+  gain.gain.exponentialRampToValueAtTime(volume,startAt+0.08);
+  gain.gain.exponentialRampToValueAtTime(0.0001,startAt+duration);
+  osc.connect(gain); gain.connect(audioContext.destination);
+  osc.start(startAt); osc.stop(startAt+duration+0.03);
+}
+function musicBeat(){
+  const now=audioContext.currentTime;
+  const note=melody[musicStep%melody.length];
+  playSoftNote(note,now,0.55,0.045);
+  if(musicStep%4===0) playSoftNote(note/2,now,1.35,0.018);
+  musicStep++;
+}
+musicBtn.addEventListener('click',async()=>{
+  if(!audioContext){
+    const AudioCtx=window.AudioContext||window.webkitAudioContext;
+    if(!AudioCtx){musicBtn.textContent='المتصفح لا يدعم الموسيقى';return;}
+    audioContext=new AudioCtx();
+  }
+  if(audioContext.state==='suspended') await audioContext.resume();
+  if(musicTimer){
+    clearInterval(musicTimer); musicTimer=null;
+    musicBtn.textContent='♫ تشغيل موسيقى هادئة';
+  }else{
+    musicBeat(); musicTimer=setInterval(musicBeat,650);
+    musicBtn.textContent='Ⅱ إيقاف الموسيقى';
+  }
+});
 
-    <script src="script.js"></script>
 
+// حركة 3D خفيفة تتبع حركة المؤشر على البطاقات
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  document.querySelectorAll('.gift,.quiz').forEach(card => {
+    card.addEventListener('pointermove', event => {
+      const rect = card.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      const depth = card.classList.contains('gift') ? 7 : 3;
+      card.style.transform = `rotateX(${-y * depth}deg) rotateY(${x * depth}deg) translateY(-3px)`;
+    });
+    card.addEventListener('pointerleave', () => {
+      card.style.transform = card.classList.contains('gift')
+        ? 'rotateX(7deg) rotateY(-3deg) translateZ(25px)'
+        : 'rotateX(2deg) translateZ(15px)';
+    });
+  });
+}
+
+const quizQuestions = [
+  { question: "هل أنا شخص مزعج بالنسبة لك؟", options: ["نعم", "لا", "مزعج جدا"], correct: 1 },
+  { question: "ما هو لوني المفضل؟", options: ["أحمر", "أصفر", "أخضر"], correct: 0 },
+  { question: "متى بدأت رحلتنا؟", options: ["14 جويلية", "15 جويلية", "13 جويلية"], correct: 0 },
+  { question: "شحال تحبيني؟", options: ["منحبكش", "شخص مهم", "نحبك بزااااااف ❤️"], correct: 2 }
+];
+let currentQuestion = 0;
+let locked = false;
+const questionArea = document.getElementById('questionArea');
+const resultBox = document.getElementById('result');
+const finalSurprise = document.getElementById('finalSurprise');
+
+function renderQuestion(){
+  locked = false;
+  resultBox.textContent = '';
+  finalSurprise.classList.remove('show');
+  const item = quizQuestions[currentQuestion];
+  document.getElementById('progressLabel').textContent =
+    `Question ${currentQuestion + 1} sur ${quizQuestions.length}`;
+  document.getElementById('progressFill').style.width =
+    `${(currentQuestion / quizQuestions.length) * 100}%`;
+
+  questionArea.innerHTML = '';
+  const title = document.createElement('div');
+  title.className = 'quiz-question';
+  title.textContent = item.question;
+  questionArea.appendChild(title);
+
+  item.options.forEach((option, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'quiz-option';
+    button.textContent = `${String.fromCharCode(65 + index)}. ${option}`;
+    button.addEventListener('click', () => checkAnswer(index, button));
+    questionArea.appendChild(button);
+  });
+}
+
+function checkAnswer(selected, selectedButton){
+  if(locked) return;
+  questionArea.querySelectorAll('.quiz-option').forEach(button => button.classList.remove('wrong'));
+  const item = quizQuestions[currentQuestion];
+  if(selected !== item.correct){
+    selectedButton.classList.add('wrong');
+    resultBox.textContent = 'Pas encore 😊 Réessaie, tu peux le faire !';
+    return; // Mauvaise réponse : on reste sur la même question.
+  }
+
+  locked = true;
+  selectedButton.classList.add('correct');
+  questionArea.querySelectorAll('button').forEach(button => button.disabled = true);
+  resultBox.textContent = 'Bonne réponse ! Bravo 💗';
+
+  const next = document.createElement('button');
+  next.type = 'button';
+  next.className = 'primary quiz-next';
+  next.textContent = currentQuestion === quizQuestions.length - 1
+    ? 'Découvrir ton message secret 💌'
+    : 'Question suivante →';
+  next.addEventListener('click', () => {
+    currentQuestion++;
+    if(currentQuestion < quizQuestions.length){
+      renderQuestion();
+    }else{
+      document.getElementById('progressLabel').textContent = 'Défi terminé ! ♡';
+      document.getElementById('progressFill').style.width = '100%';
+      questionArea.innerHTML = '';
+      resultBox.textContent = 'Tu as répondu correctement à toutes les questions !';
+      finalSurprise.classList.add('show');
+      finalSurprise.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+  });
+  questionArea.appendChild(next);
+}
+renderQuestion();
+
+/* Les questions et la musique sont laissées à personnaliser par toi. */
+for(let i=0;i<24;i++){
+ const s=document.createElement('span');s.className='spark';s.textContent=['♡','✦','·','🌸'][i%4];
+ s.style.left=(Math.random()*100)+'vw';s.style.animationDuration=(9+Math.random()*12)+'s';
+ s.style.animationDelay=(-Math.random()*18)+'s';s.style.fontSize=(12+Math.random()*19)+'px';document.body.appendChild(s);
+}
+function launchRomanticFloaties(){
+ const symbols=['❤️','💗','💕','🌹','🌷','♡'];
+ const item=document.createElement('span');
+ item.className='floaty';
+ item.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+ item.style.left=(Math.random()*96)+'vw';
+ item.style.fontSize=(18+Math.random()*22)+'px';
+ item.style.animationDuration=(7+Math.random()*7)+'s';
+ document.body.appendChild(item);
+ setTimeout(()=>item.remove(),15000);
+}
+for(let i=0;i<18;i++) setTimeout(launchRomanticFloaties, i*350);
+setInterval(launchRomanticFloaties, 650);
+</script>
 </body>
-
 </html>
